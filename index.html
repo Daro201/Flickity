@@ -3,12 +3,61 @@
 	<head>
 		<title>My website</title>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<link rel="stylesheet" type="text/css" href="vendor/flickity.min.css">
 		<link rel="stylesheet" type="text/css" href="vendor/normalize.css">
+		<link rel="stylesheet" type="text/css" href="vendor/flickity.min.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<style>#carousel-cell1 {background-image: url("images/first.jpeg")}
+				#carousel-cell2 {background-image: url("images/second.jpeg")}
+				#carousel-cell3 {background-image: url("images/third.jpeg")}
+				#carousel-cell4 {background-image: url("images/fourth.jpeg")}
+				#carousel-cell5 {background-image: url("images/fifth.jpeg")}
+		</style>
 	</head>
 	<body>
+		<!--<a href="#carousel-cell1"></a>
+		<a href="#carousel-cell2"></a>
+		<a href="#carousel-cell3"></a>
+		<a href="#carousel-cell4"></a>
+		<a href="#carousel-cell5"></a>-->
+
+		<div class="main-carousel">
+			<div class="coursel-cell" id="carousel-cell1">
+				<div class="container">
+					<p>Nice text!</p>
+				</div>
+			</div>
+			<div class="coursel-cell" id="carousel-cell2">
+				<div class="container">
+					<p>Nice text!</p>
+				</div>
+			</div>
+			<div class="coursel-cell" id="carousel-cell3">
+				<div class="container">
+					<p>Nice text!</p>
+				</div>
+			</div>
+			<div class="coursel-cell" id="carousel-cell4">
+				<div class="container">
+					<p>Nice text!</p>
+				</div>
+			</div>
+			<div class="coursel-cell" id="carousel-cell5">
+				<div class="container">
+					<p>Nice text!</p>
+				</div>
+			</div>	
+		</div>
+		<p>
+  			View:
+  			<a href="#carousel-cell1">Cell 1</a>,
+  			<a href="#carousel-cell2">Cell 2</a>,
+  			<a href="#carousel-cell3">Cell 3</a>,
+  			<a href="#carousel-cell4">Cell 4</a>,
+  			<a href="#carousel-cell5">Cell 5</a>
+		</p>
+
 		<script src="vendor/flickity.pkgd.min.js"></script>
 		<script src="js/script.js"></script>
+		<script src="vendor/hash.js"></script>
 	</body>
 </html>
