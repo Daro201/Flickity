@@ -1,19 +1,40 @@
 'use strict';
+
+//Adding mustache to html file
+
+	var mustacheCarousel = document.getElementById('template-carousel').innerHTML;
+	var carouselMain = document.querySelector('.carousel');
+
+	Mustache.parse(mustacheCarousel);
+	var output = '';
+	for(var i = 0; i < imagesData.length; i++){
+		console.log(imagesData);
+		output += Mustache.render(mustacheCarousel, imagesData[i]);
+	}
+	carouselMain.innerHTML = output;
+
+// Conecting flickity to html file 
+
 var elem = document.querySelector('.carousel');
 var flkty = new Flickity(elem, {
-  // options
+
   cellAlign: 'left',
   contain: true,
   hash: true,
   pageDots: false 
 });
 
-var buttonGroup = document.querySelector('.button');
+//Restarting button moving back to first image
 
-buttonGroup.addEventListener( 'click', function( event ) {
+var restart = document.querySelector('.button');
+
+restart.addEventListener( 'click', function( event ) {
   var selector = event.target.getAttribute('data-selector');
+
   flkty.selectCell( selector );
 });
+
+//Progression bar at the bottom of gallery
 
 var progressBar = document.querySelector('.progress-bar')
 
@@ -21,3 +42,8 @@ flkty.on( 'scroll', function( progress ) {
   progress = Math.max( 0, Math.min( 1, progress ) );
   progressBar.style.width = progress * 100 + '%';
 });
+
+
+
+
+

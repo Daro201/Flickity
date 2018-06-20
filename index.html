@@ -9,46 +9,62 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 	</head>
 	<body>
-		<style> #carousel-cell1 {background-image: url("images/first.jpeg")}
-				#carousel-cell2 {background-image: url("images/second.jpeg")}
-				#carousel-cell3 {background-image: url("images/third.jpeg")}
-				#carousel-cell4 {background-image: url("images/fourth.jpeg")}
-				#carousel-cell5 {background-image: url("images/fifth.jpeg")}
-		</style>
+			<button class="button" data-selector="#carousel-cell1">Restart</button>
+		
+<!-- Flickity HTML initial-->
 
-		<button class="button" data-selector=".cell1">Restart</button>
+	<div class="carousel" ></div>
+	<div class="progress-bar"></div>
 
-		<div class="carousel" >
-  			<div class="carousel-cell cell1" id="carousel-cell1">
-  				<div class="container">
-					<h1>Nice text!</h1>
-				</div>
-			</div>
- 			<div class="carousel-cell" id="carousel-cell2">
-  				<div class="container">
-					<h1>Nice text!</h1>
-				</div>
-			</div>
-  			<div class="carousel-cell" id="carousel-cell3">
-  				<div class="container">
-					<h1>Nice text!</h1>
-				</div>
-			</div>
-  			<div class="carousel-cell" id="carousel-cell4">
-  				<div class="container">
-					<h1>Nice text!</h1>
-				</div>
-			</div>
-  			<div class="carousel-cell" id="carousel-cell5">
-  				<div class="container">
-					<h1>Nice text!</h1>
-				</div>
-			</div>
-		</div>
-		<div class="progress-bar"></div>
+<!-- Template made for gallery-->
 
+		<script id="template-carousel" type="x-tmpl-mustache">
+			<div class="carousel-cell" id="{{id}}" style="background-image: url({{image}})">
+  				<div class="container">
+					<h1>{{title}}</h1>
+					{{{description}}}
+				</div>
+			</div>
+		</script>
+
+<!-- Data used in mustache-->
+		<script>
+		var imagesData = [
+			{
+				image: "images/first.jpeg", 
+				title: "First image",
+				description: "<p>First description</p>",
+				id: "carousel-cell1"
+			},
+			{
+				image: "images/second.jpeg", 
+				title: "Second image",
+				description: "<p>Second description</p>",
+				id: "carousel-cell2"
+			},
+			{
+				image: "images/third.jpeg", 
+				title: "Third image",
+				description: "<p>Third description</p>",
+				id: "carousel-cell3"
+			},
+			{
+				image: "images/fourth.jpeg", 
+				title: "Fourth image",
+				description: "<p>Fourth description</p>",
+				id: "carousel-cell4"
+			},
+			{
+				image: "images/fifth.jpeg", 
+				title: "Fifith image",
+				description: "<p>Fifth description</p>",
+				id: "carousel-cell5"
+			}
+		];
+		</script>
 		<script src="vendor/flickity.pkgd.min.js"></script>
 		<script src="vendor/hash.js"></script>
+		<script src="vendor/mustache.min.js"></script>
 		<script src="js/script.js"></script>
 	</body>
 </html>

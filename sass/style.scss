@@ -1,4 +1,4 @@
-
+/* external css: flickity.css */
 
 * { box-sizing: border-box; }
 
@@ -9,18 +9,7 @@ body { font-family: sans-serif; }
   background-size: cover;
   height: 50vh;
   min-height: 250px;
-
-  	.container {
-  		max-width: 1200px;
-  		height:20%;
-  		margin: 2% auto;
-  		text-align: center;
-  		padding: 10%;
-  		background: #000;
-  		opacity: 0.5;
-  		color: white
-	}
-
+  
 }
 
 .button {
@@ -44,3 +33,38 @@ body { font-family: sans-serif; }
   background: #333;
 }
 
+.container {
+  max-width: 1200px;
+  width: 80vw;
+  height:20%;
+  margin: 2% auto;
+  text-align: center;
+  padding: 10% 0;
+  background: #000;
+  opacity: 0.5;
+  color: white
+}
+
+@media (max-width: 968px) {
+
+  .container {
+  max-width: 1200px;
+  width: 50vw;
+  height:80%;
+  margin: 2% auto;
+  text-align: center;
+  padding: 10% 0;
+  background: #000;
+  opacity: 0.5;
+  color: white
+}
+
+}
+
+@media (max-width: 767px){
+
+  .button {
+    top: 5px;
+    
+  }
+  }
