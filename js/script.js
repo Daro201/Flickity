@@ -1,5 +1,5 @@
 'use strict';
-
+var map;
 //Adding mustache to html file
 
 	var mustacheCarousel = document.getElementById('template-carousel').innerHTML;
@@ -21,7 +21,8 @@ var flkty = new Flickity(elem, {
   cellAlign: 'left',
   contain: true,
   hash: true,
-  pageDots: false 
+  pageDots: false,
+
 });
 
 //Restarting button moving back to first image
@@ -43,11 +44,20 @@ flkty.on( 'scroll', function( progress ) {
   progressBar.style.width = progress * 100 + '%';
 });
 
+
+
+flkty.on( 'change', function(index){	
+	map.panTo(imagesData[index].coords); 
+	map.setZoom(12);
+	console.log('Flickity change ' + index );
+})
+
 //function creating markers on the map from data from array
+
 window.initMap = function() {
 	
-		var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 5,
+		 map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 9,
 			center: imagesData[0].coords
 		});
 
@@ -55,6 +65,9 @@ window.initMap = function() {
 			var marker = new google.maps.Marker({
 			position: imagesData[i].coords,
 			map: map
+		})
+		marker.addListener('click', function(){
+			flkty.selectCell('#' + imagesData[i].id);
 		})
 	}
 };	
