@@ -11,13 +11,16 @@
 	<body>
 		
 	<button class="button" data-selector="#carousel-cell1">Restart</button>
-		
+
 <!-- Flickity HTML initial-->
 
 	<div class="carousel" ></div>
 	<div class="progress-bar"></div>
 
-
+<!--The div element for the map -->
+	<div id="page-wrapper">
+    	<div id="map"></div>
+	</div>
 <!-- Template made for gallery-->
 
 		<script id="template-carousel" type="x-tmpl-mustache">
@@ -36,37 +39,45 @@
 				image: "images/first.jpeg", 
 				title: "First image",
 				description: "<p>First description</p>",
-				id: "carousel-cell1"
+				id: "carousel-cell1",
+				coords: {lat: 52.406, lng: 16.925}
 			},
 			{
 				image: "images/second.jpeg", 
 				title: "Second image",
 				description: "<p>Second description</p>",
-				id: "carousel-cell2"
+				id: "carousel-cell2",
+				coords: {lat: 52.401, lng: 17.085}
 			},
 			{
 				image: "images/third.jpeg", 
 				title: "Third image",
 				description: "<p>Third description</p>",
-				id: "carousel-cell3"
+				id: "carousel-cell3",
+				coords: {lat: 52.370, lng: -0.127}
 			},
 			{
 				image: "images/fourth.jpeg", 
 				title: "Fourth image",
 				description: "<p>Fourth description</p>",
-				id: "carousel-cell4"
+				id: "carousel-cell4",
+				coords: {lat: 51.507, lng: -0.127}
 			},
 			{
 				image: "images/fifth.jpeg", 
 				title: "Fifith image",
 				description: "<p>Fifth description</p>",
-				id: "carousel-cell5"
+				id: "carousel-cell5",
+				coords: {lat: 52.520, lng: 13.404}
 			}
 		];
 		</script>
 		<script src="vendor/flickity.pkgd.min.js"></script>
 		<script src="vendor/hash.js"></script>
 		<script src="vendor/mustache.min.js"></script>
+		<script async defer
+    		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa11Ex3E8fNTSIX68c0wLt_YKeKtY-x4M&callback=initMap">
+    	</script>
 		<script src="js/script.js"></script>
 	</body>
 </html>

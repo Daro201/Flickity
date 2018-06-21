@@ -43,6 +43,21 @@ flkty.on( 'scroll', function( progress ) {
   progressBar.style.width = progress * 100 + '%';
 });
 
+//function creating markers on the map from data from array
+window.initMap = function() {
+	
+		var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 5,
+			center: imagesData[0].coords
+		});
+
+	for (let i=0; i <imagesData.length; i++ ){
+			var marker = new google.maps.Marker({
+			position: imagesData[i].coords,
+			map: map
+		})
+	}
+};	
 
 
 
